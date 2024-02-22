@@ -1,4 +1,8 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local function sleep(seconds)
+  os.execute("sleep " .. tonumber(seconds))
+end
+
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
