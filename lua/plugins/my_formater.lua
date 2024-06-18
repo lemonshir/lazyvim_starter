@@ -1,9 +1,16 @@
 local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
-  optional = true,
   opts = {
     formatters = {
+      my_flake8 = {
+        command = "flake8",
+        cwd = util.root_file({
+          -- https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file
+          "pyproject.toml",
+          "skaffold.yaml",
+        }),
+      },
       my_black = {
         meta = {
           url = "https://github.com/psf/black",
@@ -24,23 +31,11 @@ return {
       },
     },
     formatters_by_ft = {
-      ["python"] = { "my_black" },
-      ["javascript"] = { "prettier" },
-      ["javascriptreact"] = { "prettier" },
-      ["typescript"] = { "prettier" },
-      ["typescriptreact"] = { "prettier" },
-      ["vue"] = { "prettier" },
-      ["css"] = { "prettier" },
-      ["scss"] = { "prettier" },
-      ["less"] = { "prettier" },
-      ["html"] = { "prettier" },
-      ["json"] = { "prettier" },
-      ["jsonc"] = { "prettier" },
-      ["yaml"] = { "prettier" },
-      ["markdown"] = { "prettier" },
-      ["markdown.mdx"] = { "prettier" },
-      ["graphql"] = { "prettier" },
-      ["handlebars"] = { "prettier" },
+      python = { "my_flake8" },
+      json = { "prettier" },
+      jsonc = { "prettier" },
+      yaml = { "prettier" },
+      markdown = { "prettier" },
     },
   },
 }
