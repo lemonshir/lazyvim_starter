@@ -93,26 +93,33 @@ return {
     {
       "<leader>do",
       function()
-        require("dap").step_out()
-      end,
-      desc = "step Out",
-    },
-    {
-      "<leader>dO",
-      function()
         require("dap").step_over()
       end,
       desc = "step Over",
     },
     {
+      "<leader>dO",
+      function()
+        require("dap").step_out()
+      end,
+      desc = "step Out",
+    },
+    {
       "<leader>dp",
+      function()
+        require("dap.ui.widgets").preview()
+      end,
+      desc = "Preview value",
+    },
+    {
+      "<leader>dP",
       function()
         require("dap").pause()
       end,
       desc = "Pause",
     },
     {
-      "<leader>dR",
+      "<leader>dr",
       function()
         require("dap").repl.toggle()
       end,
