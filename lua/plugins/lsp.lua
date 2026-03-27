@@ -17,21 +17,18 @@ return {
       inlay_hints = { enabled = false },
       servers = {
         pyright = {
-          enabled = true,
-          settings = {
-            python = {
-              analysis = {
-                enableReachabilityAnalysis = false,
-              },
-            },
-          },
+          -- pyright is itself a type-checker; disable to rely on mypy instead.
+          enabled = false,
+          -- settings = {
+          --   python = {
+          --     analysis = {
+          --       enableReachabilityAnalysis = false,
+          --     },
+          --   },
+          -- },
         },
         ruff = {
-          init_options = {
-            settings = {
-              logLevel = "info",
-            },
-          },
+          enabled = false,
         },
       },
     },

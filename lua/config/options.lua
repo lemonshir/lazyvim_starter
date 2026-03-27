@@ -6,4 +6,5 @@ opt.mouse = ""
 opt.tabstop = 4
 vim.g.autoformat = false
 vim.opt.spell = false
+-- vim.lsp.log.set_level(vim.log.levels.INFO)
 -- vim.diagnostic.enable(false)
