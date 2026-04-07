@@ -1,5 +1,11 @@
 return {
   {
+    "nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = false },
+    }
+  },
+  {
     "linux-cultist/venv-selector.nvim",
     cmd = "VenvSelect",
     opts = {
@@ -9,28 +15,6 @@ return {
         },
       },
       options = { enable_default_searches = false },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      inlay_hints = { enabled = false },
-      servers = {
-        pyright = {
-          -- pyright is itself a type-checker; disable to rely on mypy instead.
-          enabled = false,
-          -- settings = {
-          --   python = {
-          --     analysis = {
-          --       enableReachabilityAnalysis = false,
-          --     },
-          --   },
-          -- },
-        },
-        ruff = {
-          enabled = false,
-        },
-      },
     },
   },
 }
