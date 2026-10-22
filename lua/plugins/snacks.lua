@@ -21,6 +21,16 @@ return {
 
     picker = {
       sources = {
+        notifications = {
+          win = {
+            preview = {
+              wo = {
+                wrap = true,
+                linebreak = true,
+              },
+            },
+          },
+        },
         projects = {
           projects = projects,
           confirm = function(picker, item)
