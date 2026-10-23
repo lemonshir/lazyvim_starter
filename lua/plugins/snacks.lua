@@ -15,7 +15,7 @@ return {
       win = {
         position = "float",
         width = 0.999,
-        height = 0.999,
+        height = vim.o.lines - 1,
       },
     },
 
