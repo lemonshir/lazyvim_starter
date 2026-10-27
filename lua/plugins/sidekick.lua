@@ -50,6 +50,7 @@ return {
       "<leader>ad",
       function()
         require("sidekick.cli").close({ name = "codex" })
+        vim.notify("Codex session is detached", vim.log.levels.INFO)
       end,
       desc = "Detach Codex CLI Session",
     },
