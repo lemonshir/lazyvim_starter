@@ -19,6 +19,9 @@ end
 local function prune(project)
   for _, buf in ipairs(file_buffers()) do
     if not project or not inside(buf, project) then
+      -- Cancel deferred diagnostic display while buffer-local autocmds still
+      -- exist. Wiping an unloaded buffer first leaves stale IDs in Nvim 0.12.
+      vim.diagnostic.reset(nil, buf)
       vim.api.nvim_buf_delete(buf, { force = false })
     end
   end
