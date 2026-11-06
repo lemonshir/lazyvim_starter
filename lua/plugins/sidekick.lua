@@ -13,7 +13,7 @@ return {
         layout = "float", -- Correct key for layout type
         float = {
           width = 1,
-          height = vim.o.lines - 1,
+          height = 0.999,
           border = "none",
         },
       },
