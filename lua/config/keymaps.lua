@@ -4,6 +4,12 @@
 --
 vim.keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
+vim.keymap.set("n", "<leader>qq", function()
+  if vim.fn.confirm("Quit all Neovim windows?", "&Yes\n&No", 2) == 1 then
+    vim.cmd("qa")
+  end
+end, { desc = "Quit All (Confirm)" })
+
 vim.keymap.set(
   "n",
   "<leader><C-a>",
