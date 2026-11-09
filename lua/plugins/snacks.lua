@@ -14,7 +14,7 @@ return {
     terminal = {
       win = {
         position = "float",
-        width = 0.999,
+        width = 0, -- Snacks uses 0 for the full available width.
         height = function()
           return vim.o.lines - 1
         end,
