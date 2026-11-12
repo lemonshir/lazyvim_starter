@@ -1,5 +1,5 @@
 local root = vim.fn.expand("~/ws/repos")
-local projects = { vim.fn.expand("$HOME"), "/tmp" }
+local projects = { vim.fn.expand("$HOME"), "/tmp", root }
 
 for _, name in ipairs(vim.fn.readdir(root)) do
   local path = root .. "/" .. name

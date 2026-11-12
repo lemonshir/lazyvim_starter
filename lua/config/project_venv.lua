@@ -138,7 +138,11 @@ function M.activate(project)
   if #matches == 1 then
     activate(matches[1])
   elseif #matches > 1 then
-    vim.ui.select(matches, { prompt = "Select project virtual environment:" }, activate)
+    vim.notify(
+      "Multiple virtual environments found. Select manually via <leader>cv.",
+      vim.log.levels.INFO,
+      { title = "Project venv" }
+    )
   end
 end
 
